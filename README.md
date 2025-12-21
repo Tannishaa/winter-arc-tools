@@ -15,8 +15,15 @@ A Python-based CLI utility that automates secure file backups to AWS S3. Designe
 * **Version Control:** Git & GitHub
 
 ## 📂 Project Structure
-. ├── backup.py # Scans local folder and uploads to S3 ├── restore.py # Downloads from S3 to local machine ├── my-data/ # The directory target for backups └── .gitignore # Protects virtual environments and secrets
-
+``` text
+.
+├── backup.py        # Scans local folder and uploads to S3
+├── restore.py       # Downloads from S3 to local machine
+├── sync.py          # Real-time file watcher service
+├── requirements.txt # Project dependencies
+├── my-data/         # The directory target for backups
+└── .gitignore       # Protects virtual environments and secrets
+```
 
 ## ⚡ How to Run
 
