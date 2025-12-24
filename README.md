@@ -2,20 +2,20 @@
 
 A Python-based **System Administration Utility** that automates real-time, secure file backups to AWS S3. Engineered to bridge local development environments with enterprise-grade cloud storage, ensuring **Data Integrity** and **Disaster Recovery (DR)** readiness.
 
-## 🚀 Key Features
+## Key Features
 
 * **Real-Time Daemon:** Implements a `watchdog` observer to monitor file system events (Create/Modify) and trigger instant sync, minimizing the Recovery Point Objective (RPO).
 * **Disaster Recovery (DR):** Automated `restore.py` CLI to reconstruct the local file system from S3 archives, ensuring business continuity during system failure.
 * **Multi-Threaded Performance:** Uses `threading` to handle concurrent file uploads without blocking the main process loop.
 * **Security First:** Leverages AWS IAM programmatic access and `.gitignore` policies to ensure zero credential leakage.
 
-## 🛠 Tech Stack
+##  Tech Stack
 * **Core:** Python 3.x, Boto3 (AWS SDK)
 * **Automation:** Watchdog (File System Events), Threading
 * **Cloud:** AWS S3 (Simple Storage Service), IAM
 * **Infrastructure:** Git, AWS CLI
 
-## 📂 Project Structure
+##  Project Structure
 ```text
 .
 ├── backup.py        # Snapshot Engine: Scans and uploads directory trees
