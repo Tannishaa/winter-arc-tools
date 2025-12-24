@@ -31,16 +31,18 @@ A Python-based CLI utility that automates secure file backups to AWS S3. Designe
 Ensure you have the AWS CLI configured with your IAM user keys:
 ```bash
 aws configure
-2. Run Backup
+```
+### 2. Run Backup
 To backup the my-data directory:
 
-Bash
+```Bash
 
 python backup.py
-3. Run Restore
+```
+### 3. Run Restore
 To recover files from the cloud:
 
-Bash
+```Bash
 
 python restore.py
-
+```
