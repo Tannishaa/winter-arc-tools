@@ -1,4 +1,4 @@
-# AWS Cloud Backup Automation Tool ☁️
+# AWS Cloud Backup Automation Tool 
 
 A Python-based CLI utility that automates secure file backups to AWS S3. Designed to bridge local development environments with enterprise-grade cloud storage.
 
@@ -8,13 +8,13 @@ A Python-based CLI utility that automates secure file backups to AWS S3. Designe
 * **Security:** Uses AWS IAM programmatic access keys for secure authentication.
 * **Efficiency:** Implements `boto3` for direct API interaction, bypassing manual GUI uploads.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 * **Language:** Python 3.x
 * **Cloud Services:** AWS S3 (Simple Storage Service)
 * **SDK:** AWS Boto3
 * **Version Control:** Git & GitHub
 
-## 📂 Project Structure
+##  Project Structure
 ``` text
 .
 ├── backup.py        # Scans local folder and uploads to S3
@@ -25,7 +25,7 @@ A Python-based CLI utility that automates secure file backups to AWS S3. Designe
 └── .gitignore       # Protects virtual environments and secrets
 ```
 
-## ⚡ How to Run
+##  How to Run
 
 ### 1. Configure AWS Credentials
 Ensure you have the AWS CLI configured with your IAM user keys:
