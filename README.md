@@ -1,46 +1,58 @@
-# AWS Cloud Backup Automation Tool 
+# Cloud Vault: Secure Backup Daemon & Disaster Recovery Tool
 
-A Python-based CLI utility that automates secure file backups to AWS S3. Designed to bridge local development environments with enterprise-grade cloud storage.
+A Python-based **System Administration Utility** that automates real-time, secure file backups to AWS S3. Engineered to bridge local development environments with enterprise-grade cloud storage, ensuring **Data Integrity** and **Disaster Recovery (DR)** readiness.
 
-## Features
-* **Recursive Backup:** Automatically scans directory trees and uploads files while preserving folder structure.
-* **Disaster Recovery:** Includes a restoration script (`restore.py`) to download and rebuild local data from the cloud.
-* **Security:** Uses AWS IAM programmatic access keys for secure authentication.
-* **Efficiency:** Implements `boto3` for direct API interaction, bypassing manual GUI uploads.
+## 🚀 Key Features
 
-##  Tech Stack
-* **Language:** Python 3.x
-* **Cloud Services:** AWS S3 (Simple Storage Service)
-* **SDK:** AWS Boto3
-* **Version Control:** Git & GitHub
+* **Real-Time Daemon:** Implements a `watchdog` observer to monitor file system events (Create/Modify) and trigger instant sync, minimizing the Recovery Point Objective (RPO).
+* **Disaster Recovery (DR):** Automated `restore.py` CLI to reconstruct the local file system from S3 archives, ensuring business continuity during system failure.
+* **Multi-Threaded Performance:** Uses `threading` to handle concurrent file uploads without blocking the main process loop.
+* **Security First:** Leverages AWS IAM programmatic access and `.gitignore` policies to ensure zero credential leakage.
 
-##  Project Structure
-``` text
+## 🛠 Tech Stack
+* **Core:** Python 3.x, Boto3 (AWS SDK)
+* **Automation:** Watchdog (File System Events), Threading
+* **Cloud:** AWS S3 (Simple Storage Service), IAM
+* **Infrastructure:** Git, AWS CLI
+
+## 📂 Project Structure
+```text
 .
-├── backup.py        # Scans local folder and uploads to S3
-├── restore.py       # Downloads from S3 to local machine
-├── sync.py          # Real-time file watcher service
-├── requirements.txt # Project dependencies
-├── my-data/         # The directory target for backups
-└── .gitignore       # Protects virtual environments and secrets
+├── backup.py        # Snapshot Engine: Scans and uploads directory trees
+├── restore.py       # DR Tool: Rebuilds local data from Cloud Archive
+├── sync.py          # Daemon: Real-time file watcher service (Background Process)
+├── requirements.txt # Dependencies (boto3, watchdog)
+├── my-data/         # The target directory for backup monitoring
+└── .gitignore       # Security rules for credentials
 ```
+## Installation
+Clone the repository:
 
-##  How to Run
-
-### 1. Configure AWS Credentials
-Ensure you have the AWS CLI configured with your IAM user keys:
-```bash
-aws configure
+```Bash
+git clone https://github.com/Tanisha17016/cloud-vault.git
 ```
-### 2. Run Backup
-To backup the my-data directory:
+Install Dependencies:
+
+```Bash
+pip install -r requirements.txt
+```
+## How to Run
+1. Configure Credentials
+Ensure your environment is authenticated with AWS IAM keys:
 
 ```Bash
 
-python backup.py
+aws configure
 ```
-### 3. Run Restore
-To recover files from the cloud:
+2. Start the Backup Daemon
+To start real-time monitoring of the my-data directory:
+
+```Bash
+
+python sync.py
+```
+3. Disaster Recovery (Restore)
+To download and rebuild lost data from the cloud:
 
 ```Bash
 
