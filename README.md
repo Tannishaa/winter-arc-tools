@@ -1,4 +1,4 @@
-# Cloud Vault: Secure Backup Daemon & Disaster Recovery Tool
+# Cloud Vault: Automated Backup Daemon
 
 A Python-based **System Administration Utility** that automates real-time, secure file backups to AWS S3. Engineered to bridge local development environments with enterprise-grade cloud storage, ensuring **Data Integrity** and **Disaster Recovery (DR)** readiness.
 
